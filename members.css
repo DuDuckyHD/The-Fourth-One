@@ -1,0 +1,164 @@
+/* GLOBAL */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0; /* Light Gray */
+    color: #222;
+    transition: background 0.6s ease, color 0.6s ease; /* smoother global transition */
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 15px;
+    text-align: center;
+    background: #1f1f1f; /* Darker Gray Navbar */
+    backdrop-filter: blur(8px);
+    transition: background 0.5s ease;
+}
+
+.logo {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: gold;
+    margin-bottom: 8px;
+    transition: color 0.5s ease;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 6px;
+    transition: background 0.5s ease, color 0.5s ease, transform 0.4s ease;
+}
+
+.nav-links li a:hover {
+    background: gold;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* MEMBER CONTENT */
+.member-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* MEMBER HEADER */
+.member-header h1 {
+    color: #2b2b2b; /* Dark Gray */
+    margin: 10px 0;
+    transition: color 0.5s ease;
+}
+
+.member-header h3,
+.member-header h4 {
+    color: #444;
+    margin: 5px 0;
+    transition: color 0.5s ease;
+}
+
+/* PROFILE PICTURE — Squarish Rounded */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 25%;          /* squarish but rounded */
+    border: 4px solid #2b2b2b;   /* Dark Gray border */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    border-color: gold;
+}
+
+/* CONTENT BOX */
+.content-box {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+    transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.4s ease;
+}
+
+.content-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+}
+
+/* SECTION TITLES */
+.section h2 {
+    color: #2b2b2b;
+    margin-top: 0;
+    margin-bottom: 10px;
+    transition: color 0.5s ease;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15%;         /* soft rounded corners */
+    border: 2px solid #2b2b2b;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    border-color: gold;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
+    .profile-pic {
+        width: 140px;
+        height: 140px;
+    }
+
+    .gallery img {
+        height: 120px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* PAGE TRANSITION EFFECT */
+body {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+body.loaded {
+    opacity: 1;
+}
